@@ -1,19 +1,23 @@
 :root {
-  --welcome-bg-color: rgb(20, 20, 20);
-  --h2-bg-color: aliceblue;
-  --header-bg-color: #282f35;
+  --body-bg-color: rgb(20, 20, 20);
   --secondary-color: #e2725b;
+  --header-bg-color: #202124;
+  --h2-bg-color: aliceblue;
   --job-name-color: rgb(223, 77, 77);
 
   --hamburger-color: var(--secondary-color);
   --bar-height: .3rem;
   --bar-width: 2.5rem;
   --hamburger-gap: .4rem;
+
+  --hamburger-menu-font: "Oswald", sans-serif;
+  --welcome-section-font: 'Roboto Mono', monospace;
+  --h2-font: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  --projects-title-font: 'Josefin Sans', sans-serif;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
-  /* outline: 1px solid red; */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -40,7 +44,8 @@ body {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.6rem;
   color: #fff;
-  background-color: rgb(20, 20, 20);
+  background-color: var(--body-bg-color);
+  overflow-x: hidden;
 }
 
 p, h1, h2 {
@@ -81,6 +86,7 @@ header .left-side {
   border-right: 2rem solid var(--header-bg-color);
   border-bottom: 11rem solid transparent;
   z-index: 3;
+  position: relative;
 }
 
 .nav-bar {
@@ -95,7 +101,7 @@ header .left-side {
 }
 
 .nav-bar ul {
-  display: flex; /* change back to flex*/ 
+  display: flex; 
   height: 100%;
   width: 100%;
   justify-content: space-around;
@@ -113,8 +119,8 @@ header .left-side {
   display: flex;
   flex-direction: column;
   z-index: -1;
-  top: 4.1rem;
-  right: 5rem;
+  top: 40%;
+  right: 4%;
   gap: var(--hamburger-gap);
   cursor: pointer;
 }
@@ -162,17 +168,26 @@ header .left-side {
   height: 14rem;
   display: flex;
   align-items: center;
+  font-family: var(--hamburger-menu-font);
   font-size: 2.5rem;
-  padding-left: 2rem;
   border: .1rem solid var(--secondary-color);
   border-left: none;
-  background-color: var(--header-bg-color);
+  border-right: none;
+  background-color: var(--body-bg-color);
   transition: .7s;
 }
 
-.hamburger-menu nav ul {
-  display: flex;
-  flex-direction: column;
+.hamburger-menu nav {
+  width: 100%;
+}
+
+.hamburger-menu li:hover {
+  background-color:#202124;
+}
+
+.hamburger-menu a {
+  display: block;
+  padding-left: 4rem;
 }
 
 /* hamburger menu - end */
@@ -180,6 +195,7 @@ header .left-side {
 #welcome-section {
   height: 100vh;
   padding: 10rem 5rem;
+  font-family: var(--welcome-section-font);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -193,7 +209,6 @@ header .left-side {
 
 h1 {
   font-size: 10rem;
-  letter-spacing: 1rem;
   transition: color .2s ease-in-out;
 }
 
@@ -205,7 +220,9 @@ h1 {
 
 h2 {
   background-color: rgba(117, 113, 113);
-  color:rgb(20, 20, 20);
+  color: var(--body-bg-color);
+  text-shadow: .2rem .2rem .5rem rgba(0, 0, 0, 0.5);
+  font-family: var(--h2-font);
   font-size: 3.5rem;
   text-align: center;
 }
@@ -216,7 +233,16 @@ h2 {
   background-color: var(--job-name-color);
 }
 
-.square-bracket {
+.job-name::before {
+  content: "[";
+}
+
+.job-name::after {
+  content: "]";
+}
+
+.job-name::before,
+.job-name::after {
   font-size: 2rem;
 }
 
@@ -228,7 +254,12 @@ main section >*:not(h2) {
 #push-about-me-down,
 #push-projects-down {
   position: absolute;
-  top:-11rem;
+  width: 100%;
+}
+
+#push-about-me-down,
+#push-projects-down  {
+  top:-12rem;
 }
 
 .job-name {
@@ -291,7 +322,9 @@ main section >*:not(h2) {
 
 .projects-wrapper >* {
   background-color: #fafafa;
-  color:rgb(20, 20, 20);
+  font-family: var(--projects-title-font);
+  font-weight: 500;
+  color: var(--body-bg-color);
   padding: 1rem;
   box-shadow: 5.2px 10.4px 10.4px hsl(0deg 0% 0% / 0.34);
   border-radius: 1rem;
@@ -419,6 +452,8 @@ footer i {
   }
 }
 
+/* Media Queries */
+
 @media screen and (max-width: 1200px) {
   .nav-bar ul {
     display: none;
@@ -429,16 +464,9 @@ footer i {
   }
 
   .hamburger-button:has(input:checked) + .hamburger-menu {
-    top: 11rem;
-  }
-
-  #push-about-me-down,
-  #push-projects-down {
-    top: -11.1rem;
+    top: 110%;
   }
 }
-
-
 
 @media screen and (max-width: 1065px) {
   .projects-wrapper {
@@ -462,6 +490,12 @@ footer i {
   }
 }
 
+@media screen and (max-width: 960px) {
+  figcaption {
+    font-size: 2.35rem;
+  }
+}
+
 @media screen and (max-width: 900px) {
   header {
     height: 8rem;
@@ -469,10 +503,6 @@ footer i {
 
   header .left-side {
     border-bottom: 9rem solid var(--secondary-color); 
-  }
-
-  .hamburger-button:has(input:checked) + .hamburger-menu {
-    top: 9rem;
   }
 
   #welcome-section p {
@@ -483,6 +513,11 @@ footer i {
     font-size: 7rem;
   }
   
+  #push-about-me-down, 
+  #push-projects-down {
+    top: -10rem;
+  }
+
   .projects-wrapper {
     display: flex;
     flex-direction: column;
@@ -496,7 +531,7 @@ footer i {
   }
 
   figcaption {
-    padding-top: .5rem;
+    padding-top: .9rem;
     border-top: 1px solid var(--secondary-color);
   }
 
@@ -527,19 +562,20 @@ footer i {
     border-bottom: 6rem solid var(--secondary-color); 
   }
   
-  .hamburger-button:has(input:checked) + .hamburger-menu {
-    top: 6rem;
+  .hamburger-button:has(input:checked) + .hamburger-menu { 
     font-size: 1.5rem;
+    font-weight: 500;
+    height: 10rem;
   }
-
-  .hamburger-menu {
-    height: 12rem;
-  }
-
 
   .hamburger-button {
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 35%;
+    height: 2rem;
+  }
+
+  #push-about-me-down, 
+  #push-projects-down {
+    top: -7rem;
   }
 
   .projects-wrapper {
@@ -569,9 +605,6 @@ footer i {
   }
 }
 
-/* - de adaugat hamburger-menu top value 
-de la media query 900 in jos 
-   - de rezolvat bug hamburger icon la query 900px
-   - de folosit ::beofore si ::after in loc de span
-pt. square brackets
+/*  
+ -TO DO
 */
