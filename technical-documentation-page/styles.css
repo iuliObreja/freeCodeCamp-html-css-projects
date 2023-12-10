@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  position: relative;
+  box-sizing: inherit;
+  background-color: #1c1c1c;
+  color: #F8F8F8;
+  font-family: Tahoma, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.04rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+nav {
+  position: fixed;
+  top: 25px;
+  left: 130px;
+  width: 15rem;
+  padding: 0.5em 0.5em 0.5em 1.5em;
+  border-left: 1px solid orange;
+}
+
+nav header {
+  margin-bottom: 0.5em;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+main {
+  position: absolute;
+  left: calc(130px + 15rem + 25px);
+  right: 130px;
+  margin-top: 25px;
+  padding: 0.5em 1em 1em;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+div.section-content {
+  margin: 1em 0 1em 1em;
+}
+
+div.section-content >* {
+  margin-bottom: 1em;
+}
+
+li >* {
+  display: inline;
+}
+
+main ol{
+  margin-left: 1em;
+}
+
+main ol li {
+  margin: 0.5em;
+}
+
+div.sub-section ol li {
+  margin-left: 1.5em;
+}
+
+a {
+  color: #4C95FA;
+}
+
+nav ul li a {
+  padding-left: 4px;
+}
+
+nav ul li:hover {
+  background-color: #272727;
+  border-radius: 5px;
+  padding: 1px;
+}
+
+a:visited {
+  color:#F996DD;
+}
+
+a:active {
+  background-color: #52B9FB;
+  color: #F8F8F8;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+div.example-container code, div pre {
+  color: #B3B3B3;
+}
+
+code:not(div.example-container code, div pre) {
+  display: inline-block;
+  background-color: #343434;
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+div.example-container {
+  background-color: #343434;
+  border-radius: 5px;
+}
+
+div.incorrect-example {
+  background-color: rgba(60, 11, 26, 0.5);
+} 
+
+div.section-content ol li > div,
+div .header-of-incorrect {
+  background-color: #343434;
+}
+
+div.section-content ol li > div,
+div.example-container .language-name,
+nav ul li a {
+  display: block;
+}
+
+div.example-container .language-name {
+  border: 1px solid #F8F8F8;
+  padding: 0.2em 2em;
+}
+
+pre {
+  padding-left: 2em;
+  white-space: pre-wrap;
+}
+
+div.sub-section {
+  padding: 1px;
+}
+
+div.sub-section >*:not(h4) {
+  margin: 1em 1em 0.3em;
+}
+
+section ol li,
+#anatomy_of_an_html_document ul li{
+  margin-bottom: 1.5em;
+}
+
+section ol li div{
+  margin-top: 0.5em;
+}
+
+.code-text__white {
+  color: #F8F8F8;
+}
+
+#anatomy_of_an_html_document ul {
+  padding-left: 2em;
+}
+
+#anatomy_of_an_html_document ul li {
+  list-style: outside;
+}
+
+.note-container {
+  padding: 1em 1em 1em 2.5em;
+  border-radius: 5px;
+  background-color: rgba(24, 160, 246, 0.5);
+  color: #F8F8F8;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.code__green {
+  color: rgb(0 150 0);
+}
+
+.code__red {
+  color: rgb(200 0 0);
+}
+
+div.img-wrapper {
+  width: 65%;
+  padding: 0.5em 0;
+  margin: 0 auto 0.8em;
+}
+
+img {
+  margin: 0 auto;
+}
+
+@media (min-width: 1375px) and (max-width: 1625px) {
+  div.img-wrapper {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1375px) {
+  div.img-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  nav {
+    left: 45px;
+  }
+
+  main {
+    left: 270px;
+  }
+}
+
+@media (max-width: 1000px) {
+  nav {
+    left: 25px;
+  }
+
+  main {
+    left: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  nav, main {
+    position: static;
+    margin: 0 auto;
+  }
+
+  nav {
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid orange;
+    padding: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+
+  nav li {
+    line-height: 2em;
+  }
+
+  main {
+    width: 100%;
+    text-align: left;
+    margin-top: 1em;
+  }
+}
+
+#page-up {
+  width: 100%;
+  height: 1px;
+}
+
+#btn {
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  right: 45px;
+  z-index: 99;
+  font-size: 15px; 
+  border: none;
+  outline: none;
+  background-color: gray;
+  color: darkgray;
+  cursor: pointer; 
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#btn:hover {
+  background-color: #F8F8F8;
+}

@@ -1,0 +1,526 @@
+:root {
+  --main-color: #00CADF;
+  --heading-footer-color: #101010;
+
+  --bar-width: 2.5rem;
+  --bar-height: .3rem;
+  --hamburger-gap: .4rem;
+  --hamburger-color: #9ea0a4;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+ 
+html {
+  font-size: 62.5%;
+  /* 62.5% = 10px */
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  color: #FFF;
+  min-height: 100vh;
+  background-image: url(https://themall.io/wp-content/uploads/2023/03/Mesh-Gradient-1-2.png);
+  background-image: url(https://themall.io/wp-content/uploads/2023/03/Mesh-Gradient-1-2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #000;
+  background-size: 100vw;
+  font-size: 1.6rem;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
+  white-space: nowrap;
+}
+
+.heading {
+  background-color: var(--heading-footer-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10rem;
+}
+
+#nav-bar ul{
+  display: flex;
+  align-items: center;
+}
+
+#nav-bar li{
+  padding-left: 4rem;
+}
+
+/* Hamburger-button */
+.hamburger-button {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  right: 3rem;
+  top: 4.1rem;
+  z-index: -1;
+  cursor: pointer;
+}
+
+.hamburger-button input {
+  appearance: none;
+  pointer-events: none;
+}
+
+.hamburger-button::before,
+.hamburger-button::after,
+.hamburger-button input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--hamburger-color);
+  border-radius: 10rem;
+  transform-origin: left center;
+  transition: all .2s ease-in-out;
+}
+
+.hamburger-button input:checked {
+  width: 0;
+  opacity: 0;
+}
+
+.hamburger-button:has(input:checked)::before {
+  rotate: 37deg;
+}
+
+.hamburger-button:has(input:checked)::after {
+  rotate: -37deg;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-button:has(input:checked) + .hamburger-menu {
+  display: block;
+}
+
+#hamburger-nav-bar ul >* {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+}
+
+#hamburger-nav-bar a {
+  font-size: 2rem;
+  width: 100%;
+}
+
+#hamburger-nav-bar a:hover {
+  position: relative;
+  padding-top: 1.35rem;
+  height: 5rem;
+  background-color: #000;
+  box-shadow: 0 0 0 100vmax #000;
+  clip-path: inset(0 -100vmax);
+}
+
+main, .heading, footer {
+  display: grid;
+  grid-template-columns: minmax(3rem, 1fr) minmax(min-content, 140rem) minmax(3rem, 1fr);
+}
+
+.heading >*, 
+main >*,
+.footer-wrapper {
+  grid-column: 2 / 3;
+}
+
+h1 {
+  font-size: 5rem;
+  letter-spacing: .2rem;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: .3rem;
+}
+
+.hero {
+  width: 40%;
+  margin: 7rem 0 10rem;
+}
+
+.under-title-text {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+a.link-button {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background-color: var(--main-color);
+  display: inline-block;
+  padding: 1.5rem 3.5rem;
+  border: 2rem;
+  border-radius: .7rem;
+}
+
+main section {
+  margin-bottom: 8rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  column-gap: 2rem;
+  row-gap: 3rem;
+}
+
+section h2 {
+  grid-column: 1 / -1;
+  color: var(--main-color);
+}
+
+.features >*:not(h2) {
+  padding: 1rem;
+}
+
+.features .feature-name {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.flip-card-back {
+  display: none;
+}
+
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 5rem;
+  row-gap: 3rem;
+}
+
+.roadmap >*:not(h2) {
+  padding: 3.5rem;
+  background-color: rgba(51, 55, 59, 0.5);
+}
+
+h3, h2{
+  margin-bottom: 2rem;
+}
+
+.roadmap p {
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
+.engine-training {
+  width: 50%;
+}
+
+.engine-training p {
+  line-height: 3rem;
+}
+
+.video-tutorial {
+  width: 50%;
+}
+
+.video-tutorial iframe {
+  display: block;
+}
+
+aside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+aside p {
+  font-size: 3rem;
+  font-weight: 700;
+  width: 50%;
+  letter-spacing: .2rem;
+  line-height: 3rem;
+}
+
+aside a {
+  font-size: 2rem;
+  font-weight: 700;
+  border: 2px solid #FFF;
+  border-radius: 10px;
+  padding: 1rem 2.5rem;
+}
+
+.full-bleed {
+  position: relative;
+  height: 16.5rem;
+  background-color: var(--main-color);
+  box-shadow: 0 0 0 100vmax var(--main-color);
+  clip-path: inset(0 -100vmax);
+}
+
+footer {
+  background-color: var(--heading-footer-color);
+}
+
+footer a {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 2.1rem;
+}
+
+.footer-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 3rem 0 2rem;
+}
+
+.social-icons,
+.copyright {
+  grid-column: 1 / -1;
+}
+
+.row-two {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  margin-top: -2rem;
+}
+
+.addendum {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5rem;
+  row-gap: 2.5rem;
+}
+
+.addendum-header {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.addendum a {
+  transition: color .3s ease-in-out;
+}
+
+.addendum a:hover {
+  color: var(--main-color);
+}
+
+.form-wrapper {
+  display: grid;
+  grid-template-columns: 10% 60%;
+  grid-template-rows: 45%;
+}
+
+form,
+.banner-wrapper {
+  grid-column: 2 / 3;
+}
+
+form >* {
+  display: block;
+}
+
+label {
+  word-spacing: .3rem;
+}
+
+label,
+input[value="SUBMIT"] {
+  font-weight: 700;
+  color: #FFF;
+}
+
+form input:nth-child(2) {
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+  background-color: var(--heading-footer-color);
+  color: #FFF;
+  width: 30rem;
+  padding: 2rem 0 .7rem .5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  outline-style: none;
+}
+
+input[value] {
+  background-color: var(--main-color);
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 1.3rem;
+}
+
+footer img {
+  height: auto;
+  width: 100%;
+}
+
+.social-icons {
+  padding-top: 2rem;
+}
+
+.social-icons a {
+  display: inline-block;
+  color: #969fac;
+  background-color: rgba(150,159,172,0.12);
+  border: 1px solid rgba(150,159,172,0.12);
+  border-radius: 4px;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: 0 .7rem 2rem 0;
+  text-align: center;
+  transition: all .3s ease-in-out;
+}
+
+.social-icons a >* {
+  padding-top: .7rem;
+}
+
+.social-icons a:hover {
+  background-color: #047c8a;
+  color: var(--heading-footer-color);
+}
+
+.copyright {
+  font-size: 1.3rem;
+}
+
+#btn {
+  display: block;
+  position: fixed;
+  bottom: 3rem;
+  right: 4.5rem;
+  z-index: 99;
+  font-size: 1.5rem; 
+  border: 1px solid var(--heading-footer-color);
+  outline: none;
+  background-color: rgba(150,159,172,0.12);
+  color: darkgrey;
+  cursor: pointer; 
+  padding: 1.5rem;
+  border-radius: .4rem;
+}
+
+#btn:hover {
+  background-color: rgba(150,159,172,0.52);
+}
+
+/* media queries */
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+@media screen and (max-width: 1210px) {
+  .features {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .roadmap {
+    grid-template-columns: repeat(2, 45%);
+  }
+}
+
+@media screen and (max-width: 1001px) {
+  #nav-bar {
+    display: none;
+  }
+  
+  .hamburger-button {
+    z-index: 2;
+  }
+  
+  .footer-wrapper,
+  .addendum, 
+  .form-wrapper {
+    display: block;
+  }
+
+  .hero,
+  .engine-training,
+  .video-tutorial {
+    width: 100%;
+  }
+   
+  iframe {
+    width: 100%;
+  }
+
+  .full-bleed {
+    height: 25rem;
+  }
+
+  aside {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  aside p {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  aside a {
+    grid-column: 2 / 3;
+    width: 60%;
+    margin-left: 18rem;
+  }
+
+  .addendum >* {
+    margin-bottom: 2rem;
+  }
+
+  .row-two {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 935px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .roadmap {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 688px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  aside a {
+    margin-left: 16rem;
+  }
+}

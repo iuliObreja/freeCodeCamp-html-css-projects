@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Tahoma, sans-serif;
+}
+
+body {
+  background-color: hsla(43, 100%, 49%, 0.7);
+}
+
+main {
+  width: 80%;
+  margin: 1.5em auto;
+  padding: 0.2em 0.2em 0.5em;
+  background-color: hsla(0, 0%, 8%);
+  color: #7f8f9f;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0.5em;
+  font-size: 2rem;
+}
+
+#img-div {
+  width: 65%;
+  margin: 1em auto 3em;
+  padding: 0.5em;
+  border-bottom: 1px solid hsla(43, 100%, 49%, 0.7);
+}
+
+#image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+#img-caption {
+  text-align: center;
+  padding: 1em 0;
+  font-size: 1.2rem;
+}
+
+article {
+  width: 85%;
+  padding: 0.2em;
+  margin: 0 auto;
+}
+
+article p:last-of-type {
+  margin-top: 2.5em;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+#tribute-info > p {
+  margin-bottom: 0.7em;
+}
+
+footer > p {
+  text-align: center;
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+#tribute-link {
+  color: hsla(43, 100%, 49%, 0.7);
+  transition: color 0.5s ease-in-out;
+}
+
+#tribute-link:hover {
+  color: hsla(43, 100%, 59%, 0.7);
+}
+
+footer a {
+  color: hsla(0, 100%, 35%, 1);
+}
+
+footer p {
+  margin-bottom: 0.5em;
+}

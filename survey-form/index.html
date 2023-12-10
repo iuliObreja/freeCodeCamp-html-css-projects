@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" 
+            content="width=device-width, initial-scale=1.0"
+      >
+      <title>Survey Form for Certification</title>
+      <link rel="stylesheet" href="styles.css"></link>
+    </head>
+    <body>
+      <h1 id="title">Survey Form</h1>
+      <p id="description" class="description-p">
+        Do you like to exercise? Tell us more...
+      </p>
+      
+      <form id="survey-form" action="#" method="post">
+        <fieldset>
+          <label id="name-label" for="name">
+            Enter Your Name:
+          </label>
+          <input 
+            id="name" 
+            name="name" 
+            type="text" 
+            placeholder="John Smith" 
+            required/>
+          
+          <label id="email-label" for="email">
+            Enter Your Email:
+          </label>
+          <input 
+            id="email" 
+            name="email" 
+            type="email" 
+            placeholder="JohnSmith@gmail.com" 
+            required/>
+
+          <label id="number-label" for="age">
+            Input Your Age:
+          </label>
+          <input 
+            id="number" 
+            name="age" 
+            type="number" 
+            min="16" max="65" 
+            placeholder="21" 
+            required/>
+
+          <label for="new-password">
+            Create a New Password:
+          </label>
+          <input 
+            id="new-password" 
+            class="new-password" 
+            type="password" 
+            name="new-password" 
+            pattern=[a-zA-Z0-9]{6,} 
+            required/>
+        </fieldset>
+
+        <fieldset>
+          <p>Do you think you do enough exercises? (required):</p>
+          <label for="yes">
+            <input 
+              id="yes" 
+              class="inline" 
+              name="yes-no" 
+              value="yes" 
+              type="radio"/> Yes
+          </label>
+          <label for="no">
+            <input 
+              id="no" 
+              class="inline" 
+              name="yes-no" 
+              value="no" 
+              type="radio" 
+              checked/> No
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <label for="dropdown">
+            On a scale from 1 to 3, how fit you consider yourself to be?
+          </label>
+          <select id="dropdown">
+            <option value="">(select one option)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+
+          <p>
+            What type of exercise or physical activity do you prefer?(Select all that apply:
+          </p>
+          <label for="cardio">
+            <input 
+              type="checkbox" 
+              id="cardio" 
+              class="inline" 
+              name="physical-activity" 
+              value="cardio" 
+              checked/> Cardiovascular (e.g., running, cycling)
+          </label>
+
+          <label for="strength">
+            <input 
+              type="checkbox" 
+              id="strength" 
+              class="inline" 
+              name="physical-activity" 
+              value="strength-training"/> Strength training (e.g., weightlifting)
+          </label>
+
+          <label for="yoga-pilates">
+            <input  
+              type="checkbox" 
+              id="yoga-pilates" 
+              class="inline" 
+              name="physical-activity" 
+              value="yoga-pilates"/> Yoga or Pilates
+          </label>
+
+          <label for="team-sports">
+            <input 
+              type="checkbox" 
+              id="team-sports" 
+              class="inline" 
+              name="physical-activity" 
+              value="team-sports" 
+              checked/> Team sports (e.g., basketball, football)
+          </label>
+
+          <label for="swimming">
+            <input 
+              type="checkbox" 
+              id="swimming" 
+              class="inline" 
+              name="physical-activity" 
+              value="swimming"/> Swimming
+          </label>
+
+          <label for="walking">
+            <input 
+              type="checkbox" 
+              id="walking" 
+              class="inline" 
+              name="physical-activity" 
+              value="walking"/> Walking
+          </label>
+
+          <label for="other">
+            <input 
+              type="checkbox" 
+              id="other" 
+              class="inline" 
+              name="physical-activity" 
+              value="other"/> Other (Please specify)
+          </label>
+          <textarea rows=4 placeholder="What other activities do you preffer?"></textarea>
+
+          <p>
+            How long is your typical workout session?
+          </p>
+          <label for="less-than-30-mins">
+            <input 
+              type="radio" 
+              id="less-than-30-mins" 
+              class="inline" 
+              name="workout-session" 
+              value="less-than-30-mins"/> Less than 30 minutes
+          </label>
+
+          <label for="30-60-mins">
+            <input 
+              type="radio" 
+              id="30-60-mins" 
+              class="inline" 
+              name="workout-session" 
+              value="30-60-mins" 
+              checked/> 30-60 minutes
+          </label>
+
+          <label for="60-90-mins">
+            <input 
+              type="radio" 
+              id="60-90-mins" 
+              class="inline" 
+              name="workout-session" 
+              value="60-90-mins"/> 60-90 minutes
+          </label>
+
+          <label for="over-90-mins">
+            <input 
+              type="radio" 
+              id="over-90-mins" 
+              class="inline" 
+              name="workout-session" 
+              value="over-90-mins"/> More than 90 minutes
+          </label>
+        </fieldset>
+        <input id="submit" type="submit" value="Submit">
+      </form>
+    </body>
+</html>
