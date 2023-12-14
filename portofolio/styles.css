@@ -255,11 +255,7 @@ main section >*:not(h2) {
 #push-projects-down {
   position: absolute;
   width: 100%;
-}
-
-#push-about-me-down,
-#push-projects-down  {
-  top:-12rem;
+  top: -12rem;
 }
 
 .job-name {
